@@ -1,17 +1,17 @@
 import { siteConfig } from "@/lib/data";
 
 export default function Footer() {
-  const year = new Date().getFullYear();
-
   return (
     <footer className="border-t border-border bg-slate-50">
       <div className="section-container flex flex-col gap-6 py-10 sm:flex-row sm:items-center sm:justify-between">
         <div>
-          <p className="text-sm font-semibold text-foreground">
-            {siteConfig.name}
-          </p>
+          <p className="text-sm font-semibold text-foreground">{siteConfig.name}</p>
           <p className="mt-1 text-sm text-muted">
-            © {year} {siteConfig.name}. All rights reserved.
+            ©{" "}
+            <time dateTime="2026" suppressHydrationWarning>
+              {new Date().getFullYear()}
+            </time>{" "}
+            {siteConfig.name}. All rights reserved.
           </p>
         </div>
 

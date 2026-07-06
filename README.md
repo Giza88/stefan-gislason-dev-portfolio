@@ -16,10 +16,12 @@ This repository contains the source code for my personal developer portfolio web
 - Vercel for deployment
 
 ## Projects Highlighted
-- PawMatch – Pet playmate finder app
-- OpenTrackr – Package tracking tool
+- PawMatch.fit – Pet adoption matching platform
+- OpenTrackr – Productivity app with tasks and calendar
+- ThinkLoop – Idea organisation web app
+- Paw Health – Pet health tracking app
 - Datacom AI Newsletter – Automated industry updates
-- Additional apps and tools I've built
+- Microsoft Ollama Agent, Free Hack AI, HTB AI Helper, and more on [GitHub](https://github.com/Giza88?tab=repositories)
 
 ## About Me
 I'm an early‑career IT professional and emerging developer with experience in IT support, customer service, onboarding, and building modern web applications. I enjoy solving problems, creating useful tools, and learning new technologies.
@@ -28,5 +30,5 @@ I'm an early‑career IT professional and emerging developer with experience in 
 This portfolio is designed to present my work to employers, recruiters, and collaborators. It highlights my development skills, problem‑solving ability, and the projects I've created.
 
 ## Contact
-LinkedIn: linkedin.com/in/stefan-gislason  
+LinkedIn: linkedin.com/in/stefan-gislason-53948426b  
 Email: stefangislason@outlook.com

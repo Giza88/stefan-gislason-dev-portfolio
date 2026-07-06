@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
+import { siteConfig } from "@/lib/data";
 import "./globals.css";
 
 const inter = Inter({
@@ -9,7 +10,7 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://stefangislason.dev"),
+  metadataBase: new URL(siteConfig.url),
   title: {
     default: "Stefan Gislason | IT Support Professional & Emerging Developer",
     template: "%s | Stefan Gislason",
@@ -25,12 +26,12 @@ export const metadata: Metadata = {
     "PawMatch",
     "OpenTrackr",
   ],
-  authors: [{ name: "Stefan Gislason", url: "https://stefangislason.dev" }],
-  creator: "Stefan Gislason",
+  authors: [{ name: siteConfig.name, url: siteConfig.url }],
+  creator: siteConfig.name,
   openGraph: {
     type: "website",
     locale: "en_NZ",
-    url: "https://stefangislason.dev",
+    url: siteConfig.url,
     title: "Stefan Gislason | IT Support Professional & Emerging Developer",
     description:
       "Portfolio showcasing IT support experience, development projects, and professional identity.",
@@ -52,6 +53,20 @@ export const metadata: Metadata = {
   },
 };
 
+const structuredData = {
+  "@context": "https://schema.org",
+  "@type": "Person",
+  name: siteConfig.name,
+  jobTitle: siteConfig.tagline,
+  email: siteConfig.email,
+  url: siteConfig.url,
+  sameAs: [siteConfig.linkedin, siteConfig.github],
+  address: {
+    "@type": "PostalAddress",
+    addressCountry: siteConfig.location,
+  },
+};
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -60,6 +75,13 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${inter.variable} scroll-smooth`}>
       <body className="min-h-screen bg-background text-foreground antialiased">
+        <a href="#main-content" className="skip-link">
+          Skip to content
+        </a>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
+        />
         {children}
       </body>
     </html>

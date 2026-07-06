@@ -9,7 +9,7 @@ export default function Projects() {
         <SectionHeading
           eyebrow="Projects"
           title="Selected work"
-          description="A mix of independent development projects and practical tools built to solve real problems with clean design and reliable delivery."
+          description="Web apps, AI tools, and practical projects from my GitHub — from deployed products to experiments that solve real problems."
         />
 
         <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-3">

@@ -4,10 +4,20 @@ type ProjectCardProps = {
   project: Project;
 };
 
+const accentStyles: Record<Project["accent"], string> = {
+  blue: "bg-blue-50 text-primary",
+  violet: "bg-violet-50 text-violet-600",
+  emerald: "bg-emerald-50 text-emerald-600",
+};
+
 export default function ProjectCard({ project }: ProjectCardProps) {
+  const isExternal = !project.linkHref.startsWith("#");
+
   return (
     <article className="card-surface flex h-full flex-col p-6 sm:p-8">
-      <div className="mb-4 inline-flex h-12 w-12 items-center justify-center rounded-xl bg-blue-50 text-primary">
+      <div
+        className={`mb-4 inline-flex h-12 w-12 items-center justify-center rounded-xl ${accentStyles[project.accent]}`}
+      >
         <svg
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 24 24"
@@ -26,9 +36,7 @@ export default function ProjectCard({ project }: ProjectCardProps) {
       </div>
 
       <h3 className="text-xl font-semibold text-foreground">{project.title}</h3>
-      <p className="mt-3 flex-1 text-sm leading-7 text-muted">
-        {project.description}
-      </p>
+      <p className="mt-3 flex-1 text-sm leading-7 text-muted">{project.description}</p>
 
       <div className="mt-5 flex flex-wrap gap-2">
         {project.tech.map((tech) => (
@@ -41,29 +49,42 @@ export default function ProjectCard({ project }: ProjectCardProps) {
         ))}
       </div>
 
-      <a
-        href={project.linkHref}
-        target={project.linkHref.startsWith("#") ? undefined : "_blank"}
-        rel={project.linkHref.startsWith("#") ? undefined : "noopener noreferrer"}
-        className="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-primary transition-colors hover:text-primary-dark"
-      >
-        {project.linkLabel}
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          viewBox="0 0 24 24"
-          fill="none"
-          stroke="currentColor"
-          strokeWidth="2"
-          className="h-4 w-4"
-          aria-hidden="true"
+      <div className="mt-6 flex flex-wrap items-center gap-4">
+        <a
+          href={project.linkHref}
+          target={isExternal ? "_blank" : undefined}
+          rel={isExternal ? "noopener noreferrer" : undefined}
+          className="inline-flex items-center gap-2 text-sm font-semibold text-primary transition-colors hover:text-primary-dark"
         >
-          <path
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            d="M7 17L17 7M17 7H8M17 7v9"
-          />
-        </svg>
-      </a>
+          {project.linkLabel}
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="2"
+            className="h-4 w-4"
+            aria-hidden="true"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              d="M7 17L17 7M17 7H8M17 7v9"
+            />
+          </svg>
+        </a>
+
+        {project.githubHref && project.githubHref !== project.linkHref && (
+          <a
+            href={project.githubHref}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-sm font-medium text-muted transition-colors hover:text-primary"
+          >
+            GitHub
+          </a>
+        )}
+      </div>
     </article>
   );
 }

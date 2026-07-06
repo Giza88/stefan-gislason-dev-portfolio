@@ -2,10 +2,12 @@
 
 import { useEffect, useState } from "react";
 import { navLinks, siteConfig } from "@/lib/data";
+import { useActiveSection } from "@/hooks/useActiveSection";
 
 export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const activeSection = useActiveSection(navLinks.map((link) => link.href));
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 12);
@@ -20,6 +22,16 @@ export default function Header() {
       document.body.style.overflow = "";
     };
   }, [menuOpen]);
+
+  const linkClassName = (href: string) => {
+    const sectionId = href.replace("#", "");
+    const isActive = activeSection === sectionId;
+
+    return [
+      "text-sm font-medium transition-colors",
+      isActive ? "text-primary" : "text-muted hover:text-primary",
+    ].join(" ");
+  };
 
   return (
     <header
@@ -39,13 +51,9 @@ export default function Header() {
           <span className="text-primary">.</span>
         </a>
 
-        <nav className="hidden items-center gap-8 md:flex">
+        <nav className="hidden items-center gap-8 md:flex" aria-label="Primary">
           {navLinks.map((link) => (
-            <a
-              key={link.href}
-              href={link.href}
-              className="text-sm font-medium text-muted transition-colors hover:text-primary"
-            >
+            <a key={link.href} href={link.href} className={linkClassName(link.href)}>
               {link.label}
             </a>
           ))}
@@ -74,6 +82,7 @@ export default function Header() {
             stroke="currentColor"
             strokeWidth="2"
             className="h-5 w-5"
+            aria-hidden="true"
           >
             {menuOpen ? (
               <path strokeLinecap="round" d="M6 6l12 12M18 6L6 18" />
@@ -86,12 +95,16 @@ export default function Header() {
 
       {menuOpen && (
         <div className="border-t border-border bg-white px-4 py-4 md:hidden">
-          <nav className="flex flex-col gap-3">
+          <nav className="flex flex-col gap-3" aria-label="Mobile primary">
             {navLinks.map((link) => (
               <a
                 key={link.href}
                 href={link.href}
-                className="rounded-lg px-3 py-2 text-sm font-medium text-foreground transition-colors hover:bg-slate-50 hover:text-primary"
+                className={`rounded-lg px-3 py-2 text-sm font-medium transition-colors hover:bg-slate-50 ${
+                  activeSection === link.href.replace("#", "")
+                    ? "bg-blue-50 text-primary"
+                    : "text-foreground hover:text-primary"
+                }`}
                 onClick={() => setMenuOpen(false)}
               >
                 {link.label}

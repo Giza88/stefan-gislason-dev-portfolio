@@ -6,7 +6,7 @@ const lines = [
   "IT Support Professional & Emerging Developer",
   "",
   "Email: stefangislason@outlook.com",
-  "LinkedIn: linkedin.com/in/stefan-gislason",
+  "LinkedIn: linkedin.com/in/stefan-gislason-53948426b",
   "GitHub: github.com/Giza88",
   "",
   "SUMMARY",
