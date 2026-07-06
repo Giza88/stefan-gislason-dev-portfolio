@@ -1,36 +1,32 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Stefan Gislason – Developer Portfolio
 
-## Getting Started
+This repository contains the source code for my personal developer portfolio website. It showcases the projects I've built, the technologies I work with, my CV, and a short introduction about who I am as a developer.
 
-First, run the development server:
+## Features
+- Modern, responsive portfolio website
+- Project showcase with links to live demos and GitHub repos
+- About Me section with background, skills, and experience
+- Downloadable CV
+- Contact details and social links
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## Tech Stack
+- HTML, CSS, JavaScript
+- React / Next.js (if used)
+- TailwindCSS (if used)
+- Vercel for deployment
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Projects Highlighted
+- PawMatch – Pet playmate finder app
+- OpenTrackr – Package tracking tool
+- Datacom AI Newsletter – Automated industry updates
+- Additional apps and tools I've built
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## About Me
+I'm an early‑career IT professional and emerging developer with experience in IT support, customer service, onboarding, and building modern web applications. I enjoy solving problems, creating useful tools, and learning new technologies.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Purpose
+This portfolio is designed to present my work to employers, recruiters, and collaborators. It highlights my development skills, problem‑solving ability, and the projects I've created.
 
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Contact
+LinkedIn: linkedin.com/in/stefan-gislason  
+Email: stefangislason@outlook.com
