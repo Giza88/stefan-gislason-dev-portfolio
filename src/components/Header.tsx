@@ -93,8 +93,12 @@ export default function Header() {
         </button>
       </div>
 
-      {menuOpen && (
-        <div className="border-t border-border bg-white px-4 py-4 md:hidden">
+      <div
+        className={`overflow-hidden border-t border-border bg-white transition-all duration-300 md:hidden ${
+          menuOpen ? "max-h-[28rem] opacity-100" : "max-h-0 opacity-0"
+        }`}
+      >
+        <div className="px-4 py-4">
           <nav className="flex flex-col gap-3" aria-label="Mobile primary">
             {navLinks.map((link) => (
               <a
@@ -120,7 +124,7 @@ export default function Header() {
             </a>
           </nav>
         </div>
-      )}
+      </div>
     </header>
   );
 }

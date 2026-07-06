@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="640" height="400" viewBox="0 0 640 400" fill="none">
+  <rect width="640" height="400" fill="#EFF6FF"/>
+  <circle cx="520" cy="80" r="120" fill="#DBEAFE"/>
+  <text x="48" y="72" fill="#2563EB" font-family="Arial, sans-serif" font-size="18" font-weight="700" letter-spacing="4">PAWMATCH</text>
+  <text x="48" y="150" fill="#0F172A" font-family="Arial, sans-serif" font-size="42" font-weight="700">Pet adoption matching</text>
+  <text x="48" y="196" fill="#64748B" font-family="Arial, sans-serif" font-size="22">React · Firebase · Vercel</text>
+  <rect x="48" y="250" width="180" height="88" rx="20" fill="#FFFFFF" stroke="#E2E8F0"/>
+  <rect x="252" y="250" width="180" height="88" rx="20" fill="#FFFFFF" stroke="#E2E8F0"/>
+  <rect x="456" y="250" width="136" height="88" rx="20" fill="#2563EB"/>
+</svg>

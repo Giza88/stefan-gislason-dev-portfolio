@@ -10,33 +10,78 @@ type FormState = {
   message: string;
 };
 
+type FormStatus = "idle" | "sending" | "success" | "error";
+
 const initialFormState: FormState = {
   name: "",
   email: "",
   message: "",
 };
 
+const web3formsKey = process.env.NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY;
+
 export default function Contact() {
   const [mounted, setMounted] = useState(false);
   const [form, setForm] = useState<FormState>(initialFormState);
-  const [submitted, setSubmitted] = useState(false);
+  const [status, setStatus] = useState<FormStatus>("idle");
+  const [errorMessage, setErrorMessage] = useState("");
   const [copied, setCopied] = useState(false);
 
   useEffect(() => {
     setMounted(true);
   }, []);
 
-  const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
-    event.preventDefault();
-
+  const submitViaMailto = () => {
     const subject = encodeURIComponent(`Portfolio enquiry from ${form.name}`);
     const body = encodeURIComponent(
       `Name: ${form.name}\nEmail: ${form.email}\n\n${form.message}`,
     );
-
     window.location.href = `mailto:${siteConfig.email}?subject=${subject}&body=${body}`;
-    setSubmitted(true);
+    setStatus("success");
     setForm(initialFormState);
+  };
+
+  const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    setStatus("sending");
+    setErrorMessage("");
+
+    if (!web3formsKey) {
+      submitViaMailto();
+      return;
+    }
+
+    try {
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+        body: JSON.stringify({
+          access_key: web3formsKey,
+          name: form.name,
+          email: form.email,
+          message: form.message,
+          subject: `Portfolio enquiry from ${form.name}`,
+          from_name: siteConfig.name,
+        }),
+      });
+
+      const result = (await response.json()) as { success?: boolean; message?: string };
+
+      if (!response.ok || !result.success) {
+        throw new Error(result.message ?? "Unable to send your message right now.");
+      }
+
+      setStatus("success");
+      setForm(initialFormState);
+    } catch (error) {
+      setStatus("error");
+      setErrorMessage(
+        error instanceof Error ? error.message : "Something went wrong. Please try again.",
+      );
+    }
   };
 
   const copyEmail = async () => {
@@ -115,7 +160,7 @@ export default function Contact() {
           </div>
 
           {mounted ? (
-            <form onSubmit={handleSubmit} className="card-surface p-6 sm:p-8">
+            <form onSubmit={handleSubmit} className="card-surface p-6 sm:p-8" noValidate>
               <div className="grid gap-5">
                 <label className="grid gap-2 text-sm font-medium text-foreground">
                   Name
@@ -124,6 +169,8 @@ export default function Contact() {
                     name="name"
                     autoComplete="name"
                     required
+                    minLength={2}
+                    disabled={status === "sending"}
                     value={form.name}
                     onChange={(event) =>
                       setForm((current) => ({
@@ -131,7 +178,7 @@ export default function Contact() {
                         name: event.target.value,
                       }))
                     }
-                    className="rounded-xl border border-border bg-white px-4 py-3 text-sm text-foreground outline-none transition-shadow focus:border-primary focus:ring-4 focus:ring-blue-100"
+                    className="rounded-xl border border-border bg-white px-4 py-3 text-sm text-foreground outline-none transition-shadow focus:border-primary focus:ring-4 focus:ring-blue-100 disabled:opacity-60"
                     placeholder="Your name"
                   />
                 </label>
@@ -143,6 +190,7 @@ export default function Contact() {
                     name="email"
                     autoComplete="email"
                     required
+                    disabled={status === "sending"}
                     value={form.email}
                     onChange={(event) =>
                       setForm((current) => ({
@@ -150,7 +198,7 @@ export default function Contact() {
                         email: event.target.value,
                       }))
                     }
-                    className="rounded-xl border border-border bg-white px-4 py-3 text-sm text-foreground outline-none transition-shadow focus:border-primary focus:ring-4 focus:ring-blue-100"
+                    className="rounded-xl border border-border bg-white px-4 py-3 text-sm text-foreground outline-none transition-shadow focus:border-primary focus:ring-4 focus:ring-blue-100 disabled:opacity-60"
                     placeholder="you@example.com"
                   />
                 </label>
@@ -160,7 +208,9 @@ export default function Contact() {
                   <textarea
                     name="message"
                     required
+                    minLength={10}
                     rows={5}
+                    disabled={status === "sending"}
                     value={form.message}
                     onChange={(event) =>
                       setForm((current) => ({
@@ -168,7 +218,7 @@ export default function Contact() {
                         message: event.target.value,
                       }))
                     }
-                    className="resize-none rounded-xl border border-border bg-white px-4 py-3 text-sm text-foreground outline-none transition-shadow focus:border-primary focus:ring-4 focus:ring-blue-100"
+                    className="resize-none rounded-xl border border-border bg-white px-4 py-3 text-sm text-foreground outline-none transition-shadow focus:border-primary focus:ring-4 focus:ring-blue-100 disabled:opacity-60"
                     placeholder="Tell me about your opportunity or project..."
                   />
                 </label>
@@ -176,15 +226,29 @@ export default function Contact() {
 
               <button
                 type="submit"
-                className="mt-6 inline-flex w-full items-center justify-center rounded-full bg-primary px-6 py-3 text-sm font-semibold text-white transition-colors hover:bg-primary-dark sm:w-auto"
+                disabled={status === "sending"}
+                className="mt-6 inline-flex w-full items-center justify-center rounded-full bg-primary px-6 py-3 text-sm font-semibold text-white transition-colors hover:bg-primary-dark disabled:cursor-not-allowed disabled:opacity-70 sm:w-auto"
               >
-                Send Message
+                {status === "sending" ? "Sending..." : "Send Message"}
               </button>
 
-              {submitted && (
+              {status === "success" && (
                 <p className="mt-4 text-sm text-primary" role="status">
-                  Your email client should open shortly. If it does not, please email
-                  me directly at {siteConfig.email}.
+                  {web3formsKey
+                    ? "Thanks — your message was sent successfully. I will get back to you soon."
+                    : "Your email client should open shortly. If it does not, please email me directly."}
+                </p>
+              )}
+
+              {status === "error" && (
+                <p className="mt-4 text-sm text-red-600" role="alert">
+                  {errorMessage} You can also email me at {siteConfig.email}.
+                </p>
+              )}
+
+              {!web3formsKey && status === "idle" && (
+                <p className="mt-4 text-xs text-muted">
+                  Form delivery uses your email app until a Web3Forms key is configured.
                 </p>
               )}
             </form>

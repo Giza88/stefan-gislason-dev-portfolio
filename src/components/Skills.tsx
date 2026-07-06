@@ -1,5 +1,5 @@
 import SectionHeading from "@/components/SectionHeading";
-import { softSkills, technicalSkills } from "@/lib/data";
+import { skillGroups, softSkills } from "@/lib/data";
 
 type SkillListProps = {
   title: string;
@@ -35,8 +35,10 @@ export default function Skills() {
           description="A balance of practical IT capability and the communication skills needed to support users effectively."
         />
 
-        <div className="grid gap-6 md:grid-cols-2">
-          <SkillList title="Technical Skills" skills={technicalSkills} />
+        <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-4">
+          {skillGroups.map((group) => (
+            <SkillList key={group.title} title={group.title} skills={group.skills} />
+          ))}
           <SkillList title="Soft Skills" skills={softSkills} />
         </div>
       </div>

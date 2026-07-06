@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="320" height="320" viewBox="0 0 320 320" fill="none">
+  <rect width="320" height="320" fill="#EFF6FF"/>
+  <circle cx="160" cy="120" r="56" fill="#DBEAFE"/>
+  <rect x="88" y="196" width="144" height="88" rx="44" fill="#BFDBFE"/>
+  <text x="160" y="292" text-anchor="middle" fill="#64748B" font-family="Arial, sans-serif" font-size="16">Add profile.jpg</text>
+</svg>

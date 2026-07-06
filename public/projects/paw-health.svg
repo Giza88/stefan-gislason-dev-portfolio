@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="640" height="400" viewBox="0 0 640 400" fill="none">
+  <rect width="640" height="400" fill="#EFF6FF"/>
+  <text x="48" y="72" fill="#2563EB" font-family="Arial, sans-serif" font-size="18" font-weight="700" letter-spacing="4">PAW HEALTH</text>
+  <text x="48" y="150" fill="#0F172A" font-family="Arial, sans-serif" font-size="42" font-weight="700">Pet health tracker</text>
+  <text x="48" y="196" fill="#64748B" font-family="Arial, sans-serif" font-size="22">Next.js · Prisma · PostgreSQL</text>
+  <rect x="48" y="250" width="544" height="88" rx="20" fill="#FFFFFF" stroke="#BFDBFE"/>
+  <circle cx="92" cy="294" r="20" fill="#DBEAFE"/>
+  <rect x="132" y="278" width="180" height="12" rx="6" fill="#DBEAFE"/>
+  <rect x="132" y="302" width="120" height="10" rx="5" fill="#EFF6FF"/>
+</svg>
