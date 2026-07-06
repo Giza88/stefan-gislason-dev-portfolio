@@ -16,13 +16,8 @@ export default function About() {
         <div className="grid gap-8 lg:grid-cols-[0.85fr_1.15fr]">
           <FadeIn className="flex flex-col items-center lg:items-start">
             <div className="relative overflow-hidden rounded-3xl border border-border bg-slate-50 shadow-sm">
-              <ProfileImage className="h-72 w-72 object-cover" />
+              <ProfileImage className="h-72 w-72 object-cover object-top" />
             </div>
-            <p className="mt-4 max-w-xs text-center text-xs leading-6 text-muted lg:text-left">
-              Add your own photo by placing{" "}
-              <code className="rounded bg-slate-100 px-1.5 py-0.5">profile.jpg</code> in the{" "}
-              <code className="rounded bg-slate-100 px-1.5 py-0.5">public/</code> folder.
-            </p>
           </FadeIn>
 
           <div className="grid gap-8">
