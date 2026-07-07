@@ -44,7 +44,7 @@ export default function Experience() {
                       <p className="mt-3 text-sm leading-7 text-muted">{item.description}</p>
                       {index === 0 && (
                         <p className="mt-3 rounded-lg bg-teal-50 px-3 py-2 text-xs font-medium text-teal-900">
-                          Highlight: Built the Datacom AI Newsletter during this internship.
+                          Highlight: Built an AI-powered trend platform during the Take2 internship.
                         </p>
                       )}
                     </div>

@@ -224,13 +224,23 @@ export type Experience = {
   description: string;
 };
 
+export const datacomHighlight = {
+  title: "Datacom Take2 internship",
+  description:
+    "Featured in Datacom's Take2 graduate celebration. Our team built an AI-powered platform that delivered tailored, newsfeed-style tech trend updates to help employees stay ahead in customer conversations and day-to-day decisions.",
+  linkedInUrl:
+    "https://www.linkedin.com/feed/update/urn:li:activity:7466017511248015360/",
+  embedUrl:
+    "https://www.linkedin.com/embed/feed/update/urn:li:activity:7466017511248015360",
+};
+
 export const experiences: Experience[] = [
   {
-    role: "IT Intern",
+    role: "IT Intern (Take2)",
     company: "Datacom, ANZ Application Services",
     period: "2024 to 2025",
     description:
-      "Supported digital systems and built an AI-driven newsletter that aggregated industry RSS feeds for internal staff updates.",
+      "Worked with fellow Take2 graduates to build an AI-powered platform that surfaced emerging tech trends through tailored, newsfeed-style updates for Datacom staff.",
   },
   {
     role: "IT Support / Customer Support",
