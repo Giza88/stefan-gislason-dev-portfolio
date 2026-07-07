@@ -20,7 +20,7 @@ This repository contains the source code for my personal developer portfolio web
 - OpenTrackr, Productivity app with tasks and calendar
 - ThinkLoop, Idea organisation web app
 - Paw Health, Pet health tracking app
-- Datacom AI Newsletter, Automated industry updates
+- Datacom AI Trend Platform, Newsfeed-style tech trend updates for staff
 - Microsoft Ollama Agent, Free Hack AI, HTB AI Helper, and more on [GitHub](https://github.com/Giza88?tab=repositories)
 
 ## About Me

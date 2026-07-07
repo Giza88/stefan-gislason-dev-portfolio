@@ -37,7 +37,7 @@ export const introParagraph =
 
 export const aboutBio = [
   "I started in hospitality, leading kitchen teams under pressure, coordinating service, and learning how clear communication keeps everything running when it matters most.",
-  "That mindset carried into IT. At CityFitness I supported users day to day; at Datacom I built an AI-driven newsletter that kept staff informed with curated industry updates.",
+  "That mindset carried into IT. At CityFitness I supported users day to day; at Datacom I helped build an AI-powered platform that delivered tailored, newsfeed-style tech trend updates to staff.",
   "Today I ship web apps with React and Next.js, explore AI-assisted workflows, and bring the same user-first approach to every project, whether I'm troubleshooting access issues or deploying a new feature.",
 ];
 
@@ -122,13 +122,13 @@ export const projects: Project[] = [
     accent: "teal",
   },
   {
-    title: "Datacom AI Newsletter",
+    title: "Datacom AI Trend Platform",
     description:
-      "Automated AI-driven newsletter that aggregated RSS feeds and generated industry updates for Datacom staff during my internship.",
-    outcome: "Automated internal newsletter delivered to Datacom staff.",
+      "AI-powered platform built during my Take2 internship that surfaced emerging tech trends through tailored, newsfeed-style updates for Datacom staff.",
+    outcome: "Newsfeed-style trend updates delivered to Datacom employees.",
     tech: ["Python", "RSS Aggregation", "AI APIs", "Automation"],
-    linkLabel: "See Experience",
-    linkHref: "#experience",
+    linkLabel: "See highlight",
+    linkHref: "#datacom-highlight",
     githubHref: "https://github.com/Giza88/Datacom-Ai-agent-training-",
     featured: true,
     accent: "slate",

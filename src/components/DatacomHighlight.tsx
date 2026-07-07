@@ -4,7 +4,7 @@ import { datacomHighlight } from "@/lib/data";
 
 export default function DatacomHighlight() {
   return (
-    <section className="w-full pb-20 pt-0 sm:pb-24">
+    <section id="datacom-highlight" className="w-full pb-20 pt-0 sm:pb-24">
       <div className="section-container">
         <FadeIn>
           <div className="grid gap-6 lg:grid-cols-[minmax(0,1fr)_minmax(0,28rem)] lg:items-start">
