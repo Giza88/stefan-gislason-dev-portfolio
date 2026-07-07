@@ -18,6 +18,8 @@ const filters: { id: ProjectFilter; label: string }[] = [
   { id: "web", label: "Web apps" },
 ];
 
+const aiTechPattern = /\b(ai|ollama|automation|agent|local ai)\b/i;
+
 function matchesFilter(project: Project, filter: ProjectFilter) {
   if (filter === "all") {
     return true;
@@ -34,9 +36,7 @@ function matchesFilter(project: Project, filter: ProjectFilter) {
   }
 
   if (filter === "ai") {
-    return project.tech.some((tech) =>
-      /ai|ollama|automation|agent|local ai/i.test(tech),
-    );
+    return project.tech.some((tech) => aiTechPattern.test(tech));
   }
 
   return project.tech.some((tech) =>

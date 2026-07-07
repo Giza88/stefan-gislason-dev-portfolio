@@ -5,6 +5,7 @@ import {
   useCallback,
   useContext,
   useMemo,
+  useRef,
   useState,
   type ReactNode,
 } from "react";
@@ -31,9 +32,10 @@ const toneStyles: Record<ToastTone, string> = {
 
 export function ToastProvider({ children }: { children: ReactNode }) {
   const [toasts, setToasts] = useState<Toast[]>([]);
+  const toastId = useRef(0);
 
   const showToast = useCallback((message: string, tone: ToastTone = "success") => {
-    const id = window.performance.now();
+    const id = toastId.current++;
 
     setToasts((current) => [...current, { id, message, tone }]);
 
