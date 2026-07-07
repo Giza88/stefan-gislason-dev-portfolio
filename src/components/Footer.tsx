@@ -17,6 +17,12 @@ export default function Footer() {
 
         <div className="flex flex-wrap items-center gap-4 text-sm font-medium">
           <a
+            href={`tel:${siteConfig.phone}`}
+            className="text-muted transition-colors hover:text-primary"
+          >
+            Phone
+          </a>
+          <a
             href={`mailto:${siteConfig.email}`}
             className="text-muted transition-colors hover:text-primary"
           >

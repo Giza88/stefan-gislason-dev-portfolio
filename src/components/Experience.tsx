@@ -10,7 +10,7 @@ export default function Experience() {
           <SectionHeading
             eyebrow="Experience"
             title="Where I have grown"
-            description="From hospitality leadership to IT support and development. Each role has shaped how I communicate, solve problems, and support users."
+            description="From hospitality leadership to IT internships and customer support. Each role has shaped how I communicate, solve problems, and support users."
           />
         </FadeIn>
 
@@ -38,13 +38,17 @@ export default function Experience() {
                             {item.role}
                           </h3>
                           <p className="text-sm font-medium text-primary">{item.company}</p>
+                          {item.location && (
+                            <p className="text-xs text-muted">{item.location}</p>
+                          )}
                         </div>
                         <span className="shrink-0 text-sm text-muted">{item.period}</span>
                       </div>
                       <p className="mt-3 text-sm leading-7 text-muted">{item.description}</p>
                       {index === 0 && (
                         <p className="mt-3 rounded-lg bg-teal-50 px-3 py-2 text-xs font-medium text-teal-900">
-                          Highlight: Built an AI-powered trend platform during the Take2 internship.
+                          Also featured in Datacom&apos;s Take2 graduate celebration for an
+                          AI-powered trend platform built during the internship.
                         </p>
                       )}
                     </div>

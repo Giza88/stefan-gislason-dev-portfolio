@@ -45,6 +45,7 @@ export default function DatacomHighlight() {
 
             <LinkedInEmbed
               embedUrl={datacomHighlight.embedUrl}
+              linkedInUrl={datacomHighlight.linkedInUrl}
               title="Datacom Take2 internship highlight on LinkedIn"
             />
           </div>

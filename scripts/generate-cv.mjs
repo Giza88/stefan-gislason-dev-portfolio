@@ -1,32 +1,35 @@
 import fs from "node:fs";
 import path from "node:path";
 
+// Note: The downloadable CV in public/stefan-gislason-cv.pdf is maintained manually.
+// Do not run this script unless you intentionally want to regenerate a placeholder PDF.
+
 const lines = [
   "Stefan Gislason",
   "IT Support Professional & Emerging Developer",
   "",
+  "Phone: 02108182178",
   "Email: stefangislason@outlook.com",
   "LinkedIn: linkedin.com/in/stefan-gislason-53948426b",
   "GitHub: github.com/Giza88",
   "",
-  "SUMMARY",
+  "OBJECTIVE",
   "Early-career IT professional with hands-on experience in onboarding,",
-  "troubleshooting, and digital systems. Built AI-driven tools and modern",
-  "web projects with a user-focused, communication-first approach.",
+  "troubleshooting, access management, and customer support.",
   "",
   "EXPERIENCE",
-  "Datacom - IT Intern (Take2, ANZ Application Services)",
-  "Built an AI-powered platform delivering newsfeed-style tech trend updates.",
+  "Datacom - IT Intern (ANZ Application Services Team) Apr 2026 to Jun 2026",
+  "Supported onboarding, troubleshooting, access requests, and MFA setup.",
   "",
-  "CityFitness - IT Support / Customer Support",
-  "Supported users with troubleshooting, access, and digital systems.",
+  "PawMatch.fit - Independent Developer Sep 2025 to Present",
+  "Built user-facing features and managed planning through deployment.",
   "",
-  "PawMatch - Independent Developer",
-  "Built user-facing features, UI/UX improvements, testing, deployment.",
+  "CityFitness - Receptionist / Customer Support Feb 2025 to Present",
+  "Delivered front-line support, onboarding, and account guidance.",
   "",
   "SKILLS",
-  "IT Support, MFA & Access Management, HTML/CSS, GitHub, AI Tools,",
-  "React, Next.js, TypeScript, Communication, Problem-solving.",
+  "Troubleshooting, MFA, onboarding, HTML/CSS/JavaScript, AI tools,",
+  "Communication, Problem-solving, Attention to detail.",
 ];
 
 function escapePdfText(value) {

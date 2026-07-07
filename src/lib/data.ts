@@ -1,19 +1,20 @@
 export const siteConfig = {
   name: "Stefan Gislason",
   tagline: "IT Support Professional & Emerging Developer",
-  headline: "I turn IT support into reliable, user-friendly software",
+  headline: "Reliable IT support with a builder's mindset",
   email: "stefangislason@outlook.com",
+  phone: "02108182178",
   linkedin: "https://www.linkedin.com/in/stefan-gislason-53948426b/",
   github: "https://github.com/Giza88",
   cvPath: "/stefan-gislason-cv.pdf",
-  location: "New Zealand",
+  location: "Auckland, New Zealand",
   url: "https://stefangislason.online",
   logo: "/logo.png",
   profileImage: "/profile.png",
   profilePlaceholder: "/profile-placeholder.svg",
   availability: {
     status: "Open to opportunities",
-    roles: "IT Support · Junior Developer",
+    roles: "IT Support · Service Desk",
   },
 };
 
@@ -27,18 +28,18 @@ export const navLinks = [
 ];
 
 export const heroHighlights = [
-  { label: "Support", value: "Onboarding, troubleshooting & user-first IT" },
-  { label: "Build", value: "React, Next.js & deployed web apps" },
-  { label: "Automate", value: "AI-assisted workflows & internal tools" },
+  { label: "Support", value: "Onboarding, troubleshooting, MFA & access workflows" },
+  { label: "Build", value: "HTML, CSS, JavaScript & deployed web apps" },
+  { label: "Learn", value: "IT Essentials L4 · Diploma in IT L5 (in progress)" },
 ];
 
 export const introParagraph =
-  "Hands-on IT support meets modern development. I help people use technology confidently, then build the tools that make that easier.";
+  "Early-career IT professional with hands-on experience in onboarding, troubleshooting, access management, and customer support across Datacom and CityFitness. Seeking an IT support or service desk role where I can deliver reliable, clear, and confident assistance to users.";
 
 export const aboutBio = [
-  "I started in hospitality, leading kitchen teams under pressure, coordinating service, and learning how clear communication keeps everything running when it matters most.",
-  "That mindset carried into IT. At CityFitness I supported users day to day; at Datacom I built an AI-driven newsletter that kept staff informed with curated industry updates.",
-  "Today I ship web apps with React and Next.js, explore AI-assisted workflows, and bring the same user-first approach to every project, whether I'm troubleshooting access issues or deploying a new feature.",
+  "I started in hospitality, leading kitchen teams across Auckland venues from 2009 to 2018 and learning how clear communication and composure keep operations running under pressure.",
+  "That mindset carried into IT. At CityFitness I deliver front-line support, onboarding, and account guidance; at Datacom I supported access requests, MFA setup, troubleshooting, and application-related queries.",
+  "Alongside support work, I build web apps like PawMatch.fit and continue studying toward my New Zealand Diploma in Information Technology while sharpening my front-end and AI-assisted development skills.",
 ];
 
 export const aboutPillars = [
@@ -122,13 +123,13 @@ export const projects: Project[] = [
     accent: "teal",
   },
   {
-    title: "Datacom AI Newsletter",
+    title: "Datacom IT Internship",
     description:
-      "Automated AI-driven newsletter that aggregated RSS feeds and generated industry updates for Datacom staff during my internship.",
-    outcome: "Automated internal newsletter delivered to Datacom staff.",
-    tech: ["Python", "RSS Aggregation", "AI APIs", "Automation"],
-    linkLabel: "See Experience",
-    linkHref: "#experience",
+      "Supported onboarding workflows, troubleshooting, access requests, and MFA setup for Datacom staff during my internship with ANZ Application Services.",
+    outcome: "Hands-on IT support across onboarding, access, and application queries.",
+    tech: ["IT Support", "MFA", "Onboarding", "Access Management"],
+    linkLabel: "See highlight",
+    linkHref: "#datacom-highlight",
     githubHref: "https://github.com/Giza88/Datacom-Ai-agent-training-",
     featured: true,
     accent: "slate",
@@ -221,6 +222,7 @@ export type Experience = {
   role: string;
   company: string;
   period: string;
+  location?: string;
   description: string;
 };
 
@@ -236,59 +238,93 @@ export const datacomHighlight = {
 
 export const experiences: Experience[] = [
   {
-    role: "IT Intern (Take2)",
-    company: "Datacom, ANZ Application Services",
-    period: "2024 to 2025",
+    role: "IT Intern",
+    company: "Datacom, ANZ Application Services Team",
+    period: "Apr 2026 to Jun 2026",
+    location: "Auckland",
     description:
-      "Worked with fellow Take2 graduates to build an AI-powered platform that surfaced emerging tech trends through tailored, newsfeed-style updates for Datacom staff.",
-  },
-  {
-    role: "IT Support / Customer Support",
-    company: "CityFitness",
-    period: "2023 to 2024",
-    description:
-      "Resolved user issues, managed access and onboarding, and delivered friendly, reliable support across digital systems.",
+      "Supported onboarding workflows, troubleshooting, access requests, and application-related queries. Guided users through account setup, MFA, permissions, and new system onboarding.",
   },
   {
     role: "Independent Developer",
-    company: "PawMatch",
-    period: "2024 to Present",
+    company: "PawMatch.fit",
+    period: "Sep 2025 to Present",
     description:
-      "Developed and improved a pet adoption matching platform with a focus on UX, testing, and reliable deployment.",
+      "Designed and built user-facing features with a focus on usability and accessibility. Managed the full development lifecycle from planning to deployment.",
+  },
+  {
+    role: "Receptionist / Customer Support",
+    company: "CityFitness",
+    period: "Feb 2025 to Present",
+    location: "Auckland",
+    description:
+      "Delivered front-line support and guided customers through onboarding and digital systems. Managed accounts, payments, and system navigation for new members.",
   },
   {
     role: "Chef & Kitchen Team Leader",
-    company: "Hospitality",
-    period: "Earlier Career",
+    company: "Various Auckland Venues",
+    period: "2009 to 2018",
+    location: "Auckland",
     description:
-      "Led teams under pressure, coordinated workflows, and built strong communication, empathy, and attention to detail.",
+      "Led kitchen teams and coordinated operations in high-pressure environments. Developed leadership, time management, and problem-solving skills.",
   },
+];
+
+export type Education = {
+  qualification: string;
+  institution: string;
+  period: string;
+};
+
+export const education: Education[] = [
+  {
+    qualification: "New Zealand Diploma in Information Technology (Level 5)",
+    institution: "Open Polytechnic of New Zealand",
+    period: "2025 to 2026",
+  },
+  {
+    qualification: "New Zealand Certificate in IT Essentials (Level 4)",
+    institution: "Toi Ohomai, Windermere Campus",
+    period: "2024",
+  },
+];
+
+export const certifications = [
+  "Google IT Support Professional Certificate",
+  "Introduction to Cybersecurity, Cisco",
+  "Introduction to Generative AI, Google",
+  "AI For Everyone, Coursera",
+  "NZ Certificate in IT Essentials (Level 4)",
+  "NZ Certificate in Computing (Level 2)",
+  "NZ Diploma in Information Technology (Level 5)",
 ];
 
 export const skillGroups = [
   {
     title: "IT & Support",
     skills: [
-      "IT Support & Troubleshooting",
-      "MFA & Access Management",
-      "Digital Systems & Onboarding",
+      "Troubleshooting, onboarding, MFA, and access workflows",
+      "Application support and digital systems navigation",
     ],
   },
   {
     title: "Development",
-    skills: ["HTML, CSS & GitHub", "React, Next.js & TypeScript"],
+    skills: ["Front-end development: HTML, CSS, JavaScript", "React, Next.js & TypeScript"],
   },
   {
     title: "Tools & AI",
-    skills: ["AI Tools (Cursor, Copilot, Perplexity)"],
+    skills: [
+      "AI-assisted workflows: Cursor, GitHub Copilot, Perplexity",
+      "Basic UI/UX awareness and user-focused design",
+    ],
   },
 ];
 
 export const softSkills = [
-  "Communication",
-  "Empathy",
-  "Problem-solving",
-  "Adaptability",
-  "Attention to detail",
-  "User-focused mindset",
+  "Clear and professional communication",
+  "Strong problem-solving and analytical thinking",
+  "Attention to detail and accuracy",
+  "Process-driven approach to troubleshooting",
+  "Collaborative teamwork in technical environments",
+  "Curiosity-driven learning and adaptability",
 ];

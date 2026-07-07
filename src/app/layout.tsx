@@ -66,6 +66,7 @@ const structuredData = {
   name: siteConfig.name,
   jobTitle: siteConfig.tagline,
   email: siteConfig.email,
+  telephone: siteConfig.phone,
   url: siteConfig.url,
   sameAs: [siteConfig.linkedin, siteConfig.github],
   address: {

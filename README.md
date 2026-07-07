@@ -20,7 +20,7 @@ This repository contains the source code for my personal developer portfolio web
 - OpenTrackr, Productivity app with tasks and calendar
 - ThinkLoop, Idea organisation web app
 - Paw Health, Pet health tracking app
-- Datacom AI Trend Platform, Newsfeed-style tech trend updates for staff
+- Datacom IT Internship, Onboarding, MFA, and access support
 - Microsoft Ollama Agent, Free Hack AI, HTB AI Helper, and more on [GitHub](https://github.com/Giza88?tab=repositories)
 
 ## About Me
@@ -30,5 +30,6 @@ I'm an early‑career IT professional and emerging developer with experience in 
 This portfolio is designed to present my work to employers, recruiters, and collaborators. It highlights my development skills, problem‑solving ability, and the projects I've created.
 
 ## Contact
+Phone: 02108182178  
 LinkedIn: linkedin.com/in/stefan-gislason-53948426b  
 Email: stefangislason@outlook.com
