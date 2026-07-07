@@ -11,6 +11,7 @@ export const siteConfig = {
   url: "https://stefangislason.online",
   logo: "/logo.png",
   profileImage: "/profile.png",
+  profileAboutImage: "/profile-about.png",
   profilePlaceholder: "/profile-placeholder.svg",
   availability: {
     status: "Open to opportunities",

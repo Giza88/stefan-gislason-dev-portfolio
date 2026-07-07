@@ -1,7 +1,7 @@
 import FadeIn from "@/components/FadeIn";
 import ProfileImage from "@/components/ProfileImage";
 import SectionHeading from "@/components/SectionHeading";
-import { aboutBio, aboutPillars } from "@/lib/data";
+import { aboutBio, aboutPillars, siteConfig } from "@/lib/data";
 
 export default function About() {
   return (
@@ -18,7 +18,10 @@ export default function About() {
         <div className="grid w-full gap-8 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.15fr)] lg:items-start">
           <FadeIn delay={100} className="flex min-w-0 flex-col items-center lg:items-start">
             <div className="relative w-full max-w-[18rem] overflow-hidden rounded-3xl border border-border bg-surface-muted shadow-sm sm:max-w-xs lg:max-w-none">
-              <ProfileImage className="aspect-square w-full object-cover object-top lg:h-72 lg:w-72" />
+              <ProfileImage
+                src={siteConfig.profileAboutImage}
+                className="aspect-square w-full object-cover object-center lg:h-72 lg:w-72"
+              />
             </div>
           </FadeIn>
 
