@@ -32,12 +32,12 @@ export const heroHighlights = [
 ];
 
 export const introParagraph =
-  "Hands-on IT support meets modern development — I help people use technology confidently, then build the tools that make that easier.";
+  "Hands-on IT support meets modern development. I help people use technology confidently, then build the tools that make that easier.";
 
 export const aboutBio = [
-  "I started in hospitality — leading kitchen teams under pressure, coordinating service, and learning how clear communication keeps everything running when it matters most.",
+  "I started in hospitality, leading kitchen teams under pressure, coordinating service, and learning how clear communication keeps everything running when it matters most.",
   "That mindset carried into IT. At CityFitness I supported users day to day; at Datacom I built an AI-driven newsletter that kept staff informed with curated industry updates.",
-  "Today I ship web apps with React and Next.js, explore AI-assisted workflows, and bring the same user-first approach to every project — whether I'm troubleshooting access issues or deploying a new feature.",
+  "Today I ship web apps with React and Next.js, explore AI-assisted workflows, and bring the same user-first approach to every project, whether I'm troubleshooting access issues or deploying a new feature.",
 ];
 
 export const aboutPillars = [
@@ -187,7 +187,7 @@ export const projects: Project[] = [
   {
     title: "TO-Done",
     description:
-      "A playful take on a to-do app — my first app built by extending an existing project, focused on learning modern JavaScript patterns.",
+      "A playful take on a to-do app, my first app built by extending an existing project, focused on learning modern JavaScript patterns.",
     outcome: "First extended app project for learning JS patterns.",
     tech: ["JavaScript", "To-Do App", "UI"],
     linkLabel: "View on GitHub",
@@ -197,7 +197,7 @@ export const projects: Project[] = [
   {
     title: "Car Project",
     description:
-      "My first React project — a fun build that helped me learn component structure, state, and front-end fundamentals.",
+      "My first React project, a fun build that helped me learn component structure, state, and front-end fundamentals.",
     outcome: "First React project covering components and state.",
     tech: ["JavaScript", "React"],
     linkLabel: "View on GitHub",
@@ -226,22 +226,22 @@ export type Experience = {
 export const experiences: Experience[] = [
   {
     role: "IT Intern",
-    company: "Datacom — ANZ Application Services",
-    period: "2024 – 2025",
+    company: "Datacom, ANZ Application Services",
+    period: "2024 to 2025",
     description:
       "Supported digital systems and built an AI-driven newsletter that aggregated industry RSS feeds for internal staff updates.",
   },
   {
     role: "IT Support / Customer Support",
     company: "CityFitness",
-    period: "2023 – 2024",
+    period: "2023 to 2024",
     description:
       "Resolved user issues, managed access and onboarding, and delivered friendly, reliable support across digital systems.",
   },
   {
     role: "Independent Developer",
     company: "PawMatch",
-    period: "2024 – Present",
+    period: "2024 to Present",
     description:
       "Developed and improved a pet adoption matching platform with a focus on UX, testing, and reliable deployment.",
   },

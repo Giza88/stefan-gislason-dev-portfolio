@@ -21,7 +21,7 @@ export default function Projects() {
             title="Featured work"
             description={
               showAll
-                ? "All projects from my GitHub — from deployed products to experiments that solve real problems."
+                ? "All projects from my GitHub, from deployed products to experiments that solve real problems."
                 : "Six projects that show how I support users, ship software, and solve practical problems."
             }
           />

@@ -27,7 +27,7 @@ export const metadata: Metadata = {
     template: "%s | Stefan Gislason",
   },
   description:
-    "Portfolio of Stefan Gislason — IT Support Professional and Emerging Developer with experience in troubleshooting, digital systems, AI workflows, and modern web development.",
+    "Portfolio of Stefan Gislason, IT Support Professional and Emerging Developer with experience in troubleshooting, digital systems, AI workflows, and modern web development.",
   keywords: [
     "Stefan Gislason",
     "IT Support",

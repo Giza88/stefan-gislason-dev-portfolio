@@ -103,7 +103,7 @@ export default function Contact() {
           <SectionHeading
             eyebrow="Contact"
             title="Let&apos;s connect"
-            description="Whether you are hiring, collaborating, or just want to say hello — I would love to hear from you."
+            description="Whether you are hiring, collaborating, or just want to say hello. I would love to hear from you."
           />
         </FadeIn>
 
@@ -240,7 +240,7 @@ export default function Contact() {
               {status === "success" && (
                 <p className="mt-4 text-sm text-primary" role="status">
                   {web3formsKey
-                    ? "Thanks — your message was sent successfully. I will get back to you soon."
+                    ? "Thanks, your message was sent successfully. I will get back to you soon."
                     : "Your email client should open shortly. If it does not, please email me directly."}
                 </p>
               )}

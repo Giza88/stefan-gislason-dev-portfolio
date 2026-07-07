@@ -10,7 +10,7 @@ export default function Experience() {
           <SectionHeading
             eyebrow="Experience"
             title="Where I have grown"
-            description="From hospitality leadership to IT support and development — each role has shaped how I communicate, solve problems, and support users."
+            description="From hospitality leadership to IT support and development. Each role has shaped how I communicate, solve problems, and support users."
           />
         </FadeIn>
 

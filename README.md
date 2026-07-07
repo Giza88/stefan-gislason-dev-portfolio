@@ -1,4 +1,4 @@
-# Stefan Gislason – Developer Portfolio
+# Stefan Gislason, Developer Portfolio
 
 This repository contains the source code for my personal developer portfolio website. It showcases the projects I've built, the technologies I work with, my CV, and a short introduction about who I am as a developer.
 
@@ -16,11 +16,11 @@ This repository contains the source code for my personal developer portfolio web
 - Vercel for deployment
 
 ## Projects Highlighted
-- PawMatch.fit – Pet adoption matching platform
-- OpenTrackr – Productivity app with tasks and calendar
-- ThinkLoop – Idea organisation web app
-- Paw Health – Pet health tracking app
-- Datacom AI Newsletter – Automated industry updates
+- PawMatch.fit, Pet adoption matching platform
+- OpenTrackr, Productivity app with tasks and calendar
+- ThinkLoop, Idea organisation web app
+- Paw Health, Pet health tracking app
+- Datacom AI Newsletter, Automated industry updates
 - Microsoft Ollama Agent, Free Hack AI, HTB AI Helper, and more on [GitHub](https://github.com/Giza88?tab=repositories)
 
 ## About Me
