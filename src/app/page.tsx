@@ -1,4 +1,5 @@
 import BackToTop from "@/components/BackToTop";
+import ChatWidget from "@/components/chat/ChatWidget";
 import Header from "@/components/Header";
 import Hero from "@/components/Hero";
 import About from "@/components/About";
@@ -25,6 +26,7 @@ export default function Home() {
         <Contact />
       </main>
       <Footer />
+      <ChatWidget />
       <BackToTop />
     </>
   );

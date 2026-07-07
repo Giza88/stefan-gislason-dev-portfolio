@@ -33,3 +33,19 @@ This portfolio is designed to present my work to employers, recruiters, and coll
 Phone: 02108182178  
 LinkedIn: linkedin.com/in/stefan-gislason-53948426b  
 Email: stefangislason@outlook.com
+
+## Chatbot (local Ollama)
+
+The portfolio includes **Stef**, a floating site-guide chat widget (bottom-right). In production it answers from portfolio content using deterministic intent matching — no external AI required.
+
+**v1 behaviour:**
+- Suggested prompts for projects, contact, CV, experience, skills, and Datacom highlight
+- Action buttons: scroll to sections, copy email, download CV, open links
+- Answers grounded in `src/lib/data.ts` (no invented experience or skills)
+
+**Optional local enhancement:** set Ollama env vars in `.env.local` (see `.env.local.example`) when running `ollama serve` locally. The `/api/chat` route calls Ollama server-side only when intent matching falls back; production visitors never talk to Ollama directly.
+
+```bash
+OLLAMA_URL=http://127.0.0.1:11434
+OLLAMA_MODEL=llama3.2
+```
