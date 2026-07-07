@@ -1,5 +1,5 @@
 import FadeIn from "@/components/FadeIn";
-import LinkedInPostPreview from "@/components/LinkedInPostPreview";
+import LinkedInEmbed from "@/components/LinkedInEmbed";
 import { datacomHighlight } from "@/lib/data";
 
 export default function DatacomHighlight() {
@@ -43,10 +43,9 @@ export default function DatacomHighlight() {
               </a>
             </div>
 
-            <LinkedInPostPreview
-              title={datacomHighlight.title}
-              description={datacomHighlight.description}
-              linkedInUrl={datacomHighlight.linkedInUrl}
+            <LinkedInEmbed
+              embedUrl={datacomHighlight.embedUrl}
+              title="Datacom Take2 internship highlight on LinkedIn"
             />
           </div>
         </FadeIn>
