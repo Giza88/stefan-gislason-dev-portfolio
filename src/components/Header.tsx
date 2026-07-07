@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { useEffect, useState } from "react";
 import { navLinks, siteConfig } from "@/lib/data";
 import { useActiveSection } from "@/hooks/useActiveSection";
@@ -44,11 +45,18 @@ export default function Header() {
       <div className="section-container flex h-16 w-full flex-row items-center sm:h-20">
         <a
           href="#home"
-          className="font-display shrink-0 text-lg font-semibold tracking-tight text-foreground transition-colors hover:text-primary"
+          aria-label={`${siteConfig.name} home`}
+          className="inline-flex shrink-0 items-center transition-opacity hover:opacity-80"
           onClick={() => setMenuOpen(false)}
         >
-          {siteConfig.name.split(" ")[0]}
-          <span className="text-primary">.</span>
+          <Image
+            src={siteConfig.logo}
+            alt={`${siteConfig.name} home`}
+            width={1024}
+            height={558}
+            priority
+            className="h-8 w-auto sm:h-10"
+          />
         </a>
 
         <nav className="hidden flex-1 items-center justify-center gap-6 lg:flex" aria-label="Primary">

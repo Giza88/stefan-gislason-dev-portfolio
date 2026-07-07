@@ -8,6 +8,7 @@ export const siteConfig = {
   cvPath: "/stefan-gislason-cv.pdf",
   location: "New Zealand",
   url: "https://stefangislason.online",
+  logo: "/logo.png",
   profileImage: "/profile.png",
   profilePlaceholder: "/profile-placeholder.svg",
   availability: {
