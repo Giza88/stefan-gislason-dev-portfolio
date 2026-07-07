@@ -230,8 +230,6 @@ export const datacomHighlight = {
     "Featured in Datacom's Take2 graduate celebration. Our team built an AI-powered platform that delivered tailored, newsfeed-style tech trend updates to help employees stay ahead in customer conversations and day-to-day decisions.",
   linkedInUrl:
     "https://www.linkedin.com/feed/update/urn:li:activity:7466017511248015360/",
-  embedUrl:
-    "https://www.linkedin.com/embed/feed/update/urn:li:activity:7466017511248015360",
 };
 
 export const experiences: Experience[] = [
