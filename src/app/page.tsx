@@ -12,7 +12,7 @@ export default function Home() {
   return (
     <>
       <Header />
-      <main id="main-content">
+      <main id="main-content" className="w-full">
         <Hero />
         <About />
         <Projects />

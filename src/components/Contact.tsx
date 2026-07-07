@@ -1,6 +1,7 @@
 "use client";
 
 import { FormEvent, useEffect, useState } from "react";
+import FadeIn from "@/components/FadeIn";
 import SectionHeading from "@/components/SectionHeading";
 import { siteConfig } from "@/lib/data";
 
@@ -28,7 +29,8 @@ export default function Contact() {
   const [copied, setCopied] = useState(false);
 
   useEffect(() => {
-    setMounted(true);
+    const frame = window.requestAnimationFrame(() => setMounted(true));
+    return () => window.cancelAnimationFrame(frame);
   }, []);
 
   const submitViaMailto = () => {
@@ -95,16 +97,18 @@ export default function Contact() {
   };
 
   return (
-    <section id="contact" className="section-padding bg-white">
+    <section id="contact" className="section-padding w-full bg-white">
       <div className="section-container">
-        <SectionHeading
-          eyebrow="Contact"
-          title="Let&apos;s connect"
-          description="Whether you are hiring, collaborating, or just want to say hello — I would love to hear from you."
-        />
+        <FadeIn>
+          <SectionHeading
+            eyebrow="Contact"
+            title="Let&apos;s connect"
+            description="Whether you are hiring, collaborating, or just want to say hello — I would love to hear from you."
+          />
+        </FadeIn>
 
-        <div className="grid gap-8 lg:grid-cols-[0.9fr_1.1fr]">
-          <div className="card-surface p-6 sm:p-8">
+        <div className="grid w-full gap-8 lg:grid-cols-2">
+          <FadeIn delay={100} className="card-surface min-w-0 p-6 sm:p-8">
             <h3 className="text-lg font-semibold text-foreground">Get in touch</h3>
             <p className="mt-3 text-sm leading-7 text-muted">
               Reach out directly or use the form to send a message. I aim to respond
@@ -112,15 +116,15 @@ export default function Contact() {
             </p>
 
             <div className="mt-8 space-y-4">
-              <div className="flex items-center gap-3">
+              <div className="flex min-w-0 flex-col gap-3 sm:flex-row sm:items-center">
                 <a
                   href={`mailto:${siteConfig.email}`}
-                  className="flex flex-1 items-center gap-3 text-sm font-medium text-foreground transition-colors hover:text-primary"
+                  className="flex min-w-0 flex-1 items-center gap-3 text-sm font-medium text-foreground transition-colors hover:text-primary"
                 >
-                  <span className="inline-flex h-10 w-10 items-center justify-center rounded-xl bg-blue-50 text-primary">
+                  <span className="inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-teal-50 text-primary">
                     @
                   </span>
-                  {siteConfig.email}
+                  <span className="min-w-0 break-all">{siteConfig.email}</span>
                 </a>
                 {mounted && (
                   <button
@@ -139,7 +143,7 @@ export default function Contact() {
                 rel="noopener noreferrer"
                 className="flex items-center gap-3 text-sm font-medium text-foreground transition-colors hover:text-primary"
               >
-                <span className="inline-flex h-10 w-10 items-center justify-center rounded-xl bg-blue-50 text-primary">
+                <span className="inline-flex h-10 w-10 items-center justify-center rounded-xl bg-teal-50 text-primary">
                   in
                 </span>
                 LinkedIn Profile
@@ -151,16 +155,17 @@ export default function Contact() {
                 rel="noopener noreferrer"
                 className="flex items-center gap-3 text-sm font-medium text-foreground transition-colors hover:text-primary"
               >
-                <span className="inline-flex h-10 w-10 items-center justify-center rounded-xl bg-blue-50 text-primary">
+                <span className="inline-flex h-10 w-10 items-center justify-center rounded-xl bg-teal-50 text-primary">
                   GH
                 </span>
                 GitHub Profile
               </a>
             </div>
-          </div>
+          </FadeIn>
 
           {mounted ? (
-            <form onSubmit={handleSubmit} className="card-surface p-6 sm:p-8" noValidate>
+            <FadeIn delay={200}>
+            <form onSubmit={handleSubmit} className="card-surface min-w-0 p-6 sm:p-8" noValidate>
               <div className="grid gap-5">
                 <label className="grid gap-2 text-sm font-medium text-foreground">
                   Name
@@ -178,7 +183,7 @@ export default function Contact() {
                         name: event.target.value,
                       }))
                     }
-                    className="rounded-xl border border-border bg-white px-4 py-3 text-sm text-foreground outline-none transition-shadow focus:border-primary focus:ring-4 focus:ring-blue-100 disabled:opacity-60"
+                    className="rounded-xl border border-border bg-white px-4 py-3 text-sm text-foreground outline-none transition-shadow focus:border-primary focus:ring-4 focus:ring-teal-100 disabled:opacity-60"
                     placeholder="Your name"
                   />
                 </label>
@@ -198,7 +203,7 @@ export default function Contact() {
                         email: event.target.value,
                       }))
                     }
-                    className="rounded-xl border border-border bg-white px-4 py-3 text-sm text-foreground outline-none transition-shadow focus:border-primary focus:ring-4 focus:ring-blue-100 disabled:opacity-60"
+                    className="rounded-xl border border-border bg-white px-4 py-3 text-sm text-foreground outline-none transition-shadow focus:border-primary focus:ring-4 focus:ring-teal-100 disabled:opacity-60"
                     placeholder="you@example.com"
                   />
                 </label>
@@ -218,7 +223,7 @@ export default function Contact() {
                         message: event.target.value,
                       }))
                     }
-                    className="resize-none rounded-xl border border-border bg-white px-4 py-3 text-sm text-foreground outline-none transition-shadow focus:border-primary focus:ring-4 focus:ring-blue-100 disabled:opacity-60"
+                    className="resize-none rounded-xl border border-border bg-white px-4 py-3 text-sm text-foreground outline-none transition-shadow focus:border-primary focus:ring-4 focus:ring-teal-100 disabled:opacity-60"
                     placeholder="Tell me about your opportunity or project..."
                   />
                 </label>
@@ -227,7 +232,7 @@ export default function Contact() {
               <button
                 type="submit"
                 disabled={status === "sending"}
-                className="mt-6 inline-flex w-full items-center justify-center rounded-full bg-primary px-6 py-3 text-sm font-semibold text-white transition-colors hover:bg-primary-dark disabled:cursor-not-allowed disabled:opacity-70 sm:w-auto"
+                className="mt-6 btn-primary btn-interactive w-full disabled:cursor-not-allowed disabled:opacity-70 sm:w-auto"
               >
                 {status === "sending" ? "Sending..." : "Send Message"}
               </button>
@@ -252,7 +257,9 @@ export default function Contact() {
                 </p>
               )}
             </form>
+            </FadeIn>
           ) : (
+            <FadeIn delay={200}>
             <div className="card-surface p-6 sm:p-8" aria-hidden="true">
               <div className="space-y-5">
                 <div className="h-12 rounded-xl bg-slate-100" />
@@ -261,6 +268,7 @@ export default function Contact() {
                 <div className="h-11 w-36 rounded-full bg-slate-100" />
               </div>
             </div>
+            </FadeIn>
           )}
         </div>
       </div>

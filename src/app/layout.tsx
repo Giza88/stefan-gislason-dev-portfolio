@@ -1,5 +1,5 @@
-import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import type { Metadata, Viewport } from "next";
+import { Inter, Plus_Jakarta_Sans } from "next/font/google";
 import { siteConfig } from "@/lib/data";
 import "./globals.css";
 
@@ -8,6 +8,17 @@ const inter = Inter({
   variable: "--font-inter",
   display: "swap",
 });
+
+const jakarta = Plus_Jakarta_Sans({
+  subsets: ["latin"],
+  variable: "--font-jakarta",
+  display: "swap",
+});
+
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+};
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url),
@@ -69,8 +80,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${inter.variable} scroll-smooth`}>
-      <body className="min-h-screen bg-background text-foreground antialiased">
+    <html lang="en" className={`${inter.variable} ${jakarta.variable} scroll-smooth`}>
+      <body className="min-h-screen w-full bg-background text-foreground antialiased">
         <a href="#main-content" className="skip-link">
           Skip to content
         </a>

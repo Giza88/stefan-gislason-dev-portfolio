@@ -18,6 +18,7 @@ export default function ProfileImage({ className = "" }: ProfileImageProps) {
       width={320}
       height={320}
       priority
+      sizes="(max-width: 1024px) 100vw, 224px"
       className={className}
       onError={() => setSrc(siteConfig.profilePlaceholder)}
     />
