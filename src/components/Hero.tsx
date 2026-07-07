@@ -1,4 +1,5 @@
 import FadeIn from "@/components/FadeIn";
+import HeroActions from "@/components/HeroActions";
 import ProfileImage from "@/components/ProfileImage";
 import { heroHighlights, introParagraph, siteConfig } from "@/lib/data";
 
@@ -61,24 +62,8 @@ export default function Hero() {
               {introParagraph}
             </FadeIn>
 
-            <FadeIn
-              immediate
-              delay={400}
-              className="mt-8 flex w-full flex-col gap-3 sm:mt-10 sm:flex-row sm:flex-wrap"
-            >
-              <a href="#projects" className="btn-primary btn-interactive sm:min-w-[9.5rem]">
-                View Projects
-              </a>
-              <a
-                href={siteConfig.cvPath}
-                download
-                className="btn-secondary btn-interactive sm:min-w-[9.5rem]"
-              >
-                Download CV
-              </a>
-              <a href="#contact" className="btn-ghost btn-interactive sm:min-w-[9.5rem]">
-                Get in Touch
-              </a>
+            <FadeIn immediate delay={400} className="w-full">
+              <HeroActions />
             </FadeIn>
           </div>
 

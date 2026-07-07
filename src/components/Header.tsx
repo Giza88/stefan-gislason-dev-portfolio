@@ -2,6 +2,9 @@
 
 import Image from "next/image";
 import { useEffect, useState } from "react";
+import AnchorLink from "@/components/AnchorLink";
+import RippleButton from "@/components/ui/RippleButton";
+import { useToast } from "@/components/ToastProvider";
 import { navLinks, siteConfig } from "@/lib/data";
 import { useActiveSection } from "@/hooks/useActiveSection";
 
@@ -9,6 +12,7 @@ export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const activeSection = useActiveSection(navLinks.map((link) => link.href));
+  const { showToast } = useToast();
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 12);
@@ -43,7 +47,7 @@ export default function Header() {
       }`}
     >
       <div className="section-container flex h-16 w-full flex-row items-center sm:h-20">
-        <a
+        <AnchorLink
           href="#home"
           aria-label={`${siteConfig.name} home`}
           className="inline-flex shrink-0 items-center transition-opacity hover:opacity-80"
@@ -57,24 +61,30 @@ export default function Header() {
             priority
             className="h-8 w-auto sm:h-10"
           />
-        </a>
+        </AnchorLink>
 
         <nav className="hidden flex-1 items-center justify-center gap-6 lg:flex" aria-label="Primary">
           {navLinks.map((link) => (
-            <a key={link.href} href={link.href} className={linkClassName(link.href)}>
+            <AnchorLink
+              key={link.href}
+              href={link.href}
+              className={linkClassName(link.href)}
+              onClick={() => setMenuOpen(false)}
+            >
               {link.label}
-            </a>
+            </AnchorLink>
           ))}
         </nav>
 
         <div className="ml-auto flex shrink-0 items-center gap-2 sm:gap-3">
-          <a
+          <RippleButton
             href={siteConfig.cvPath}
             download
             className="hidden rounded-full bg-primary px-3 py-2 text-sm font-medium text-white transition-all duration-200 hover:bg-primary-dark hover:shadow-sm sm:px-4 lg:inline-flex"
+            onClick={() => showToast("CV download started", "info")}
           >
             Download CV
-          </a>
+          </RippleButton>
 
           <button
             type="button"
@@ -111,7 +121,7 @@ export default function Header() {
         <div className="section-container py-4">
           <nav className="flex w-full flex-col gap-3" aria-label="Mobile primary">
             {navLinks.map((link) => (
-              <a
+              <AnchorLink
                 key={link.href}
                 href={link.href}
                 className={`rounded-lg px-3 py-2 text-sm font-medium transition-colors hover:bg-slate-50 ${
@@ -122,16 +132,19 @@ export default function Header() {
                 onClick={() => setMenuOpen(false)}
               >
                 {link.label}
-              </a>
+              </AnchorLink>
             ))}
-            <a
+            <RippleButton
               href={siteConfig.cvPath}
               download
               className="mt-2 inline-flex w-full items-center justify-center rounded-full bg-primary px-4 py-2 text-sm font-medium text-white"
-              onClick={() => setMenuOpen(false)}
+              onClick={() => {
+                setMenuOpen(false);
+                showToast("CV download started", "info");
+              }}
             >
               Download CV
-            </a>
+            </RippleButton>
           </nav>
         </div>
       </div>

@@ -6,6 +6,7 @@ import type { Project } from "@/lib/data";
 
 type ProjectCardProps = {
   project: Project;
+  onTechClick?: (tech: string) => void;
 };
 
 const accentStyles: Record<Project["accent"], string> = {
@@ -28,7 +29,7 @@ function ProjectImageFallback({ project }: { project: Project }) {
   );
 }
 
-export default function ProjectCard({ project }: ProjectCardProps) {
+export default function ProjectCard({ project, onTechClick }: ProjectCardProps) {
   const isExternal = !project.linkHref.startsWith("#");
   const [imageError, setImageError] = useState(false);
   const showImage = project.image && !imageError;
@@ -63,12 +64,15 @@ export default function ProjectCard({ project }: ProjectCardProps) {
 
         <div className="mt-5 flex flex-wrap gap-2">
           {project.tech.map((tech) => (
-            <span
+            <button
               key={tech}
-              className="rounded-full bg-surface-muted px-3 py-1 text-xs font-medium text-accent"
+              type="button"
+              onClick={() => onTechClick?.(tech)}
+              className="tech-tag rounded-full bg-surface-muted px-3 py-1 text-xs font-medium text-accent transition-colors hover:bg-teal-50 hover:text-primary"
+              title={`Filter projects by ${tech}`}
             >
               {tech}
-            </span>
+            </button>
           ))}
         </div>
 

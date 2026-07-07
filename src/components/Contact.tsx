@@ -2,7 +2,9 @@
 
 import { FormEvent, useEffect, useState } from "react";
 import FadeIn from "@/components/FadeIn";
+import RippleButton from "@/components/ui/RippleButton";
 import SectionHeading from "@/components/SectionHeading";
+import { useToast } from "@/components/ToastProvider";
 import { siteConfig } from "@/lib/data";
 
 type FormState = {
@@ -27,6 +29,7 @@ export default function Contact() {
   const [status, setStatus] = useState<FormStatus>("idle");
   const [errorMessage, setErrorMessage] = useState("");
   const [copied, setCopied] = useState(false);
+  const { showToast } = useToast();
 
   useEffect(() => {
     const frame = window.requestAnimationFrame(() => setMounted(true));
@@ -41,6 +44,7 @@ export default function Contact() {
     window.location.href = `mailto:${siteConfig.email}?subject=${subject}&body=${body}`;
     setStatus("success");
     setForm(initialFormState);
+    showToast("Opening your email app…", "info");
   };
 
   const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
@@ -78,6 +82,7 @@ export default function Contact() {
 
       setStatus("success");
       setForm(initialFormState);
+      showToast("Message sent. I'll get back to you soon.", "success");
     } catch (error) {
       setStatus("error");
       setErrorMessage(
@@ -90,6 +95,7 @@ export default function Contact() {
     try {
       await navigator.clipboard.writeText(siteConfig.email);
       setCopied(true);
+      showToast("Email copied to clipboard", "success");
       window.setTimeout(() => setCopied(false), 2000);
     } catch {
       setCopied(false);
@@ -127,13 +133,13 @@ export default function Contact() {
                   <span className="min-w-0 break-all">{siteConfig.email}</span>
                 </a>
                 {mounted && (
-                  <button
+                  <RippleButton
                     type="button"
                     onClick={copyEmail}
                     className="rounded-lg border border-border px-3 py-2 text-xs font-semibold text-muted transition-colors hover:border-primary hover:text-primary"
                   >
                     {copied ? "Copied" : "Copy"}
-                  </button>
+                  </RippleButton>
                 )}
               </div>
 
@@ -239,13 +245,13 @@ export default function Contact() {
                 </label>
               </div>
 
-              <button
+              <RippleButton
                 type="submit"
                 disabled={status === "sending"}
                 className="mt-6 btn-primary btn-interactive w-full disabled:cursor-not-allowed disabled:opacity-70 sm:w-auto"
               >
                 {status === "sending" ? "Sending..." : "Send Message"}
-              </button>
+              </RippleButton>
 
               {status === "success" && (
                 <p className="mt-4 text-sm text-primary" role="status">

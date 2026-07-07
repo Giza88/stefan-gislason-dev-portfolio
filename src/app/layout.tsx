@@ -1,6 +1,8 @@
 import type { Metadata, Viewport } from "next";
 import { Inter, Plus_Jakarta_Sans } from "next/font/google";
 import { siteConfig } from "@/lib/data";
+import ScrollProgress from "@/components/ScrollProgress";
+import { ToastProvider } from "@/components/ToastProvider";
 import "./globals.css";
 
 const inter = Inter({
@@ -90,7 +92,10 @@ export default function RootLayout({
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
         />
-        {children}
+        <ToastProvider>
+          <ScrollProgress />
+          {children}
+        </ToastProvider>
       </body>
     </html>
   );
