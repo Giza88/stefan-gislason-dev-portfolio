@@ -11,6 +11,7 @@ export const siteConfig = {
   siteUrl: "https://stefangislason.online",
   wwwSiteUrl: "https://www.stefangislason.online",
   logo: "/logo.png",
+  backgroundImage: "/hero-banner.png",
   profileImage: "/profile.png",
   profileAboutImage: "/profile-about.png",
   profilePlaceholder: "/profile-placeholder.svg",

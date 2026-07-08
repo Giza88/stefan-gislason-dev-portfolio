@@ -3,7 +3,7 @@ import { siteConfig } from "@/lib/data";
 export default function Footer() {
   return (
     <footer className="w-full border-t border-border bg-surface-muted">
-      <div className="section-container flex w-full flex-col gap-6 py-10 sm:flex-row sm:items-center sm:justify-between">
+      <div className="section-container flex w-full flex-col items-center gap-6 py-10 text-center sm:flex-row sm:justify-between">
         <div className="min-w-0">
           <p className="text-sm font-semibold text-foreground">{siteConfig.name}</p>
           <a
@@ -21,7 +21,7 @@ export default function Footer() {
           </p>
         </div>
 
-        <div className="flex flex-wrap items-center gap-4 text-sm font-medium">
+        <div className="flex flex-wrap items-center justify-center gap-4 text-sm font-medium">
           <a
             href={`tel:${siteConfig.phone}`}
             className="text-muted transition-colors hover:text-primary"

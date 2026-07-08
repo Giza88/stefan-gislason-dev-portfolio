@@ -14,13 +14,13 @@ export default function EducationSection() {
           />
         </FadeIn>
 
-        <div className="grid w-full gap-8 lg:grid-cols-[minmax(0,1fr)_minmax(0,1fr)]">
+        <div className="mx-auto grid w-full max-w-5xl gap-8 lg:grid-cols-[minmax(0,1fr)_minmax(0,1fr)]">
           <div className="space-y-4">
             {education.map((item, index) => {
               const delays = [100, 200] as const;
               return (
                 <FadeIn key={item.qualification} delay={delays[index] ?? 200}>
-                  <div className="card-surface card-interactive min-w-0 p-5 sm:p-6">
+                  <div className="card-surface card-interactive min-w-0 p-5 text-center sm:p-6">
                     <h3 className="font-display text-lg font-semibold text-foreground">
                       {item.qualification}
                     </h3>
@@ -33,7 +33,7 @@ export default function EducationSection() {
           </div>
 
           <FadeIn delay={300}>
-            <div className="card-surface h-full p-6 sm:p-8">
+            <div className="card-surface h-full p-6 text-center sm:p-8">
               <h3 className="font-display text-xl font-semibold text-foreground">
                 Certifications
               </h3>
@@ -41,9 +41,9 @@ export default function EducationSection() {
                 {certifications.map((certification) => (
                   <li
                     key={certification}
-                    className="flex items-start gap-3 text-sm leading-6 text-muted"
+                    className="flex items-center justify-center gap-3 text-sm leading-6 text-muted"
                   >
-                    <span className="mt-1.5 h-2 w-2 shrink-0 rounded-full bg-primary" />
+                    <span className="h-2 w-2 shrink-0 rounded-full bg-primary" />
                     {certification}
                   </li>
                 ))}

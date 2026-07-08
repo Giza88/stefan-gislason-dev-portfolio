@@ -91,7 +91,7 @@ export default function Projects() {
         </FadeIn>
 
         <FadeIn delay={100}>
-          <div className="mb-8 flex flex-wrap gap-2">
+          <div className="mb-8 flex flex-wrap justify-center gap-2">
             {filters.map((item) => {
               const isActive = filter === item.id && !techFilter;
 

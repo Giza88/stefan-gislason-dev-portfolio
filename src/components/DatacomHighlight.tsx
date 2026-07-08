@@ -7,8 +7,8 @@ export default function DatacomHighlight() {
     <section id="datacom-highlight" className="w-full pb-20 pt-0 sm:pb-24">
       <div className="section-container">
         <FadeIn>
-          <div className="grid gap-6 lg:grid-cols-[minmax(0,1fr)_minmax(0,28rem)] lg:items-start">
-            <div className="card-surface min-w-0 p-6 sm:p-8">
+          <div className="mx-auto grid max-w-5xl gap-6 lg:grid-cols-[minmax(0,1fr)_minmax(0,28rem)] lg:items-start">
+            <div className="card-surface min-w-0 p-6 text-center sm:p-8">
               <p className="text-xs font-semibold uppercase tracking-[0.14em] text-primary">
                 Featured highlight
               </p>
@@ -22,7 +22,7 @@ export default function DatacomHighlight() {
                 href={datacomHighlight.linkedInUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="mt-5 inline-flex items-center gap-2 text-sm font-semibold text-primary transition-colors hover:text-primary-dark"
+                className="mt-5 inline-flex items-center justify-center gap-2 text-sm font-semibold text-primary transition-colors hover:text-primary-dark"
               >
                 Watch on LinkedIn
                 <svg

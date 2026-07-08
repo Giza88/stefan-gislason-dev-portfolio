@@ -53,7 +53,7 @@ export default function ProjectCard({ project, onTechClick }: ProjectCardProps) 
         </div>
       )}
 
-      <div className="flex flex-1 flex-col p-6 sm:p-7">
+      <div className="flex flex-1 flex-col p-6 text-center sm:p-7">
         <p className="text-xs font-semibold uppercase tracking-[0.14em] text-primary">
           {project.outcome}
         </p>
@@ -62,7 +62,7 @@ export default function ProjectCard({ project, onTechClick }: ProjectCardProps) 
         </h3>
         <p className="mt-3 flex-1 text-sm leading-7 text-muted">{project.description}</p>
 
-        <div className="mt-5 flex flex-wrap gap-2">
+        <div className="mt-5 flex flex-wrap justify-center gap-2">
           {project.tech.map((tech) => (
             <button
               key={tech}
@@ -76,7 +76,7 @@ export default function ProjectCard({ project, onTechClick }: ProjectCardProps) 
           ))}
         </div>
 
-        <div className="mt-6 flex flex-wrap items-center gap-4">
+        <div className="mt-6 flex flex-wrap items-center justify-center gap-4">
           <a
             href={project.linkHref}
             target={isExternal ? "_blank" : undefined}

@@ -10,7 +10,7 @@ export default function SectionHeading({
   description,
 }: SectionHeadingProps) {
   return (
-    <div className="mb-12 max-w-2xl min-w-0">
+    <div className="mx-auto mb-12 max-w-3xl min-w-0 text-center">
       <p className="mb-3 text-sm font-semibold uppercase tracking-[0.18em] text-primary">
         {eyebrow}
       </p>

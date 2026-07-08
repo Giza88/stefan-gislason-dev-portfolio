@@ -10,7 +10,7 @@ export default function HeroActions() {
   const { showToast } = useToast();
 
   return (
-    <div className="mt-8 flex w-full flex-col gap-3 sm:mt-10 sm:flex-row sm:flex-wrap">
+    <div className="mt-8 flex w-full flex-col items-center justify-center gap-3 sm:mt-10 sm:flex-row sm:flex-wrap">
       <RippleButton
         className="btn-primary btn-interactive sm:min-w-[9.5rem]"
         onClick={() => smoothScrollTo("#projects")}

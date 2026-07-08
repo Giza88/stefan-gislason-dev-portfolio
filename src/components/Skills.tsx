@@ -13,7 +13,7 @@ type SkillListProps = {
 
 function SkillList({ title, skills, onSkillClick }: SkillListProps) {
   return (
-    <div className="card-surface card-interactive h-full p-6 sm:p-8">
+    <div className="card-surface card-interactive h-full p-6 text-center sm:p-8">
       <h3 className="font-display text-xl font-semibold text-foreground">{title}</h3>
       <ul className="mt-6 space-y-3">
         {skills.map((skill) => (
@@ -21,10 +21,10 @@ function SkillList({ title, skills, onSkillClick }: SkillListProps) {
             <button
               type="button"
               onClick={() => onSkillClick(skill)}
-              className="skill-chip flex w-full items-start gap-3 rounded-xl px-2 py-1.5 text-left text-sm leading-6 text-muted transition-colors hover:bg-teal-50 hover:text-primary"
+              className="skill-chip flex w-full items-center justify-center gap-3 rounded-xl px-2 py-1.5 text-sm leading-6 text-muted transition-colors hover:bg-teal-50 hover:text-primary"
               title="Click to copy skill"
             >
-              <span className="mt-1.5 h-2 w-2 shrink-0 rounded-full bg-primary" />
+              <span className="h-2 w-2 shrink-0 rounded-full bg-primary" />
               {skill}
             </button>
           </li>

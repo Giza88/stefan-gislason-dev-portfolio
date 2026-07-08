@@ -113,8 +113,8 @@ export default function Contact() {
           />
         </FadeIn>
 
-        <div className="grid w-full gap-8 lg:grid-cols-2">
-          <FadeIn delay={100} className="card-surface min-w-0 p-6 sm:p-8">
+        <div className="mx-auto grid w-full max-w-5xl gap-8 lg:grid-cols-2">
+          <FadeIn delay={100} className="card-surface min-w-0 p-6 text-center sm:p-8">
             <h3 className="text-lg font-semibold text-foreground">Get in touch</h3>
             <p className="mt-3 text-sm leading-7 text-muted">
               Reach out directly or use the form to send a message. I aim to respond
@@ -122,10 +122,10 @@ export default function Contact() {
             </p>
 
             <div className="mt-8 space-y-4">
-              <div className="flex min-w-0 flex-col gap-3 sm:flex-row sm:items-center">
+              <div className="flex min-w-0 flex-col items-center gap-3">
                 <a
                   href={`mailto:${siteConfig.email}`}
-                  className="flex min-w-0 flex-1 items-center gap-3 text-sm font-medium text-foreground transition-colors hover:text-primary"
+                  className="flex min-w-0 items-center justify-center gap-3 text-sm font-medium text-foreground transition-colors hover:text-primary"
                 >
                   <span className="inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-teal-50 text-primary">
                     @
@@ -145,7 +145,7 @@ export default function Contact() {
 
               <a
                 href={`tel:${siteConfig.phone}`}
-                className="flex items-center gap-3 text-sm font-medium text-foreground transition-colors hover:text-primary"
+                className="flex items-center justify-center gap-3 text-sm font-medium text-foreground transition-colors hover:text-primary"
               >
                 <span className="inline-flex h-10 w-10 items-center justify-center rounded-xl bg-teal-50 text-primary">
                   #
@@ -157,7 +157,7 @@ export default function Contact() {
                 href={siteConfig.linkedin}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center gap-3 text-sm font-medium text-foreground transition-colors hover:text-primary"
+                className="flex items-center justify-center gap-3 text-sm font-medium text-foreground transition-colors hover:text-primary"
               >
                 <span className="inline-flex h-10 w-10 items-center justify-center rounded-xl bg-teal-50 text-primary">
                   in
@@ -169,7 +169,7 @@ export default function Contact() {
                 href={siteConfig.github}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center gap-3 text-sm font-medium text-foreground transition-colors hover:text-primary"
+                className="flex items-center justify-center gap-3 text-sm font-medium text-foreground transition-colors hover:text-primary"
               >
                 <span className="inline-flex h-10 w-10 items-center justify-center rounded-xl bg-teal-50 text-primary">
                   GH
@@ -181,8 +181,8 @@ export default function Contact() {
 
           {mounted ? (
             <FadeIn delay={200}>
-            <form onSubmit={handleSubmit} className="card-surface min-w-0 p-6 sm:p-8" noValidate>
-              <div className="grid gap-5">
+            <form onSubmit={handleSubmit} className="card-surface min-w-0 p-6 text-center sm:p-8" noValidate>
+              <div className="grid gap-5 text-left">
                 <label className="grid gap-2 text-sm font-medium text-foreground">
                   Name
                   <input
@@ -248,7 +248,7 @@ export default function Contact() {
               <RippleButton
                 type="submit"
                 disabled={status === "sending"}
-                className="mt-6 btn-primary btn-interactive w-full disabled:cursor-not-allowed disabled:opacity-70 sm:w-auto"
+                className="btn-primary btn-interactive mx-auto mt-6 disabled:cursor-not-allowed disabled:opacity-70"
               >
                 {status === "sending" ? "Sending..." : "Send Message"}
               </RippleButton>
