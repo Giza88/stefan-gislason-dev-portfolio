@@ -23,7 +23,7 @@ export const viewport: Viewport = {
 };
 
 export const metadata: Metadata = {
-  metadataBase: new URL(siteConfig.url),
+  metadataBase: new URL(siteConfig.siteUrl),
   title: {
     default: "Stefan Gislason | IT Support Professional & Emerging Developer",
     template: "%s | Stefan Gislason",
@@ -39,12 +39,15 @@ export const metadata: Metadata = {
     "PawMatch",
     "OpenTrackr",
   ],
-  authors: [{ name: siteConfig.name, url: siteConfig.url }],
+  authors: [{ name: siteConfig.name, url: siteConfig.siteUrl }],
   creator: siteConfig.name,
+  alternates: {
+    canonical: siteConfig.siteUrl,
+  },
   openGraph: {
     type: "website",
     locale: "en_NZ",
-    url: siteConfig.url,
+    url: siteConfig.siteUrl,
     title: "Stefan Gislason | IT Support Professional & Emerging Developer",
     description:
       "Portfolio showcasing IT support experience, development projects, and professional identity.",
@@ -55,6 +58,9 @@ export const metadata: Metadata = {
     title: "Stefan Gislason | IT Support Professional & Emerging Developer",
     description:
       "Portfolio showcasing IT support experience, development projects, and professional identity.",
+  },
+  other: {
+    "twitter:url": siteConfig.siteUrl,
   },
   robots: {
     index: true,
@@ -69,7 +75,7 @@ const structuredData = {
   jobTitle: siteConfig.tagline,
   email: siteConfig.email,
   telephone: siteConfig.phone,
-  url: siteConfig.url,
+  url: siteConfig.siteUrl,
   sameAs: [siteConfig.linkedin, siteConfig.github],
   address: {
     "@type": "PostalAddress",

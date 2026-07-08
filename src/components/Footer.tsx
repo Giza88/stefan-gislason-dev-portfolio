@@ -6,6 +6,12 @@ export default function Footer() {
       <div className="section-container flex w-full flex-col gap-6 py-10 sm:flex-row sm:items-center sm:justify-between">
         <div className="min-w-0">
           <p className="text-sm font-semibold text-foreground">{siteConfig.name}</p>
+          <a
+            href={siteConfig.siteUrl}
+            className="mt-1 block text-sm text-muted transition-colors hover:text-primary"
+          >
+            stefangislason.online
+          </a>
           <p className="mt-1 text-sm text-muted">
             ©{" "}
             <time dateTime="2026" suppressHydrationWarning>

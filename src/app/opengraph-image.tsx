@@ -35,7 +35,9 @@ export default function OpenGraphImage() {
               background: "#2563eb",
             }}
           />
-          <span style={{ fontSize: 28, color: "#64748b" }}>stefangislason.online</span>
+          <span style={{ fontSize: 28, color: "#64748b" }}>
+            {new URL(siteConfig.siteUrl).host}
+          </span>
         </div>
         <div
           style={{

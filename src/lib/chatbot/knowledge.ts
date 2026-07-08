@@ -107,6 +107,7 @@ QUICK FACTS:
 - Email: ${siteConfig.email}
 - Phone: ${siteConfig.phone}
 - Location: ${siteConfig.location}
+- Website: ${siteConfig.siteUrl}
 - LinkedIn: ${siteConfig.linkedin}
 - GitHub: ${siteConfig.github}
 - CV: ${siteConfig.cvPath}
