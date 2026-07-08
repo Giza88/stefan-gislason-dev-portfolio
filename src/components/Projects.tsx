@@ -48,9 +48,23 @@ export default function Projects() {
   const { showToast } = useToast();
   const [filter, setFilter] = useState<ProjectFilter>("featured");
   const [techFilter, setTechFilter] = useState<string | null>(null);
+  const [showAll, setShowAll] = useState(false);
+
+  const featuredProjects = useMemo(
+    () => projects.filter((project) => project.featured),
+    [],
+  );
+  const extraCount = projects.length - featuredProjects.length;
 
   const visibleProjects = useMemo(() => {
-    let list = projects.filter((project) => matchesFilter(project, filter));
+    if (filter === "featured" && !showAll && !techFilter) {
+      return featuredProjects;
+    }
+
+    let list =
+      filter === "featured" && showAll
+        ? projects
+        : projects.filter((project) => matchesFilter(project, filter));
 
     if (techFilter) {
       list = list.filter((project) =>
@@ -59,16 +73,18 @@ export default function Projects() {
     }
 
     return list;
-  }, [filter, techFilter]);
+  }, [filter, techFilter, showAll, featuredProjects]);
 
   const handleFilterChange = (nextFilter: ProjectFilter) => {
     setFilter(nextFilter);
     setTechFilter(null);
+    setShowAll(nextFilter !== "featured");
   };
 
   const handleTechClick = (tech: string) => {
     setTechFilter(tech);
     setFilter("all");
+    setShowAll(true);
     showToast(`Showing projects tagged with ${tech}`, "info");
     smoothScrollTo("#projects");
   };
@@ -83,7 +99,7 @@ export default function Projects() {
             description={
               techFilter
                 ? `Filtered by ${techFilter}. Click a filter pill to reset.`
-                : filter === "all"
+                : filter === "all" || showAll
                   ? "All projects from my GitHub, from deployed products to experiments that solve real problems."
                   : "Projects that show how I support users, ship software, and solve practical problems."
             }
@@ -131,6 +147,20 @@ export default function Projects() {
           ))}
         </div>
 
+        {filter === "featured" && !techFilter && extraCount > 0 && (
+          <FadeIn className="mt-10 text-center">
+            <button
+              type="button"
+              onClick={() => setShowAll((current) => !current)}
+              className="btn-secondary btn-interactive"
+            >
+              {showAll
+                ? "Show featured projects only"
+                : `View my other projects (${extraCount} more)`}
+            </button>
+          </FadeIn>
+        )}
+
         {visibleProjects.length === 0 && (
           <FadeIn className="mt-8 text-center">
             <p className="text-sm text-muted">
@@ -141,6 +171,7 @@ export default function Projects() {
               onClick={() => {
                 setTechFilter(null);
                 setFilter("featured");
+                setShowAll(false);
               }}
               className="btn-secondary btn-interactive mt-4"
             >

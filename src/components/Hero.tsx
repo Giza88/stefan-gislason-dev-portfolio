@@ -46,7 +46,7 @@ export default function Hero() {
       <div className="section-container section-padding w-full bg-white pb-16 text-center sm:pb-20 lg:pb-24">
         <FadeIn
           immediate
-          delay={200}
+          delay={100}
           className="mx-auto flex w-full max-w-[14rem] justify-center sm:max-w-[16rem] lg:max-w-[18rem]"
         >
           <div className="relative w-full overflow-hidden rounded-3xl border border-border bg-white p-1.5 shadow-md">
@@ -57,7 +57,7 @@ export default function Hero() {
         <FadeIn
           immediate
           as="h1"
-          delay={100}
+          delay={200}
           className="font-display mx-auto mt-8 w-full max-w-4xl text-[clamp(1.875rem,4vw+1rem,3.25rem)] font-bold leading-[1.12] tracking-tight text-foreground text-balance"
         >
           {siteConfig.headline}
@@ -66,7 +66,7 @@ export default function Hero() {
         <FadeIn
           immediate
           as="p"
-          delay={200}
+          delay={300}
           className="mx-auto mt-4 w-full max-w-3xl text-base font-medium text-muted sm:text-lg lg:text-xl"
         >
           <span className="text-foreground">{siteConfig.name}</span>
@@ -77,13 +77,13 @@ export default function Hero() {
         <FadeIn
           immediate
           as="p"
-          delay={300}
+          delay={400}
           className="mx-auto mt-5 w-full max-w-3xl text-base leading-7 text-muted sm:mt-6 sm:text-lg sm:leading-8"
         >
           {introParagraph}
         </FadeIn>
 
-        <FadeIn immediate delay={400} className="mx-auto w-full max-w-3xl">
+        <FadeIn immediate delay={500} className="mx-auto w-full max-w-3xl">
           <HeroActions />
         </FadeIn>
 
