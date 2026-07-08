@@ -8,12 +8,6 @@ const nextConfig: NextConfig = {
     return [
       {
         source: "/:path*",
-        has: [{ type: "host", value: "www.stefangislason.online" }],
-        destination: `${siteUrl}/:path*`,
-        permanent: true,
-      },
-      {
-        source: "/:path*",
         has: [{ type: "host", value: legacyVercelHost }],
         destination: `${siteUrl}/:path*`,
         permanent: true,
