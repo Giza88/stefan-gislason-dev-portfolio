@@ -19,6 +19,7 @@ This repository contains the source code for my personal developer portfolio web
 - PawMatch.fit, Pet adoption matching platform
 - OpenTrackr, Productivity app with tasks and calendar
 - ThinkLoop, Idea organisation web app
+- Mino, AI focus coach web app
 - Paw Health, Pet health tracking app
 - Datacom IT Internship, Onboarding, MFA, and access support
 - Microsoft Ollama Agent, Free Hack AI, HTB AI Helper, and more on [GitHub](https://github.com/Giza88?tab=repositories)

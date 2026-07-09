@@ -114,6 +114,18 @@ export const projects: Project[] = [
     accent: "stone",
   },
   {
+    title: "Mino",
+    description:
+      "AI focus coach for capturing tasks, planning your day, and triaging email into actionable work. Dark, calm UI with Today, Agents, Connect, and History.",
+    outcome: "Deployed live focus-coach app with AI planning and quick capture.",
+    tech: ["React", "TypeScript", "Python", "FastAPI", "Vercel"],
+    linkLabel: "View Live Demo",
+    linkHref: "https://mino-agent-motivation-coach.vercel.app/",
+    image: "/projects/mino.png",
+    featured: true,
+    accent: "teal",
+  },
+  {
     title: "Paw Health",
     description:
       "Mobile-first pet health tracker for medical records, medications, and vet visits. Supports multiple pets with timeline views and dose reminders.",

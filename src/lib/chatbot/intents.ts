@@ -64,6 +64,7 @@ const intentRules: IntentRule[] = [
       /\bpawmatch\b/i,
       /\bopentrackr\b/i,
       /\bthinkloop\b/i,
+      /\bmino\b/i,
       /\bpaw\s*health\b/i,
       /\blive\s*demo\b/i,
     ],
