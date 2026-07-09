@@ -63,9 +63,25 @@ export function getSkillsSummary(): string {
   return `${technical}. Soft skills include ${soft}.`;
 }
 
+const FEATURED_PROJECT_LIMIT = 5;
+
+export function getFeaturedProjects(limit = FEATURED_PROJECT_LIMIT) {
+  return projects.filter((p) => p.featured).slice(0, limit);
+}
+
+function formatProjectNames(names: string[]): string {
+  if (names.length === 0) return "";
+  if (names.length === 1) return names[0];
+  if (names.length === 2) return `${names[0]} and ${names[1]}`;
+  return `${names.slice(0, -1).join(", ")}, and ${names[names.length - 1]}`;
+}
+
+export function getFeaturedProjectNames(limit = FEATURED_PROJECT_LIMIT): string {
+  return formatProjectNames(getFeaturedProjects(limit).map((p) => p.title));
+}
+
 export function getProjectsSummary(): string {
-  const featured = projects.filter((p) => p.featured).slice(0, 5);
-  return featured
+  return getFeaturedProjects()
     .map((p) => `${p.title}: ${p.description}`)
     .join(" ");
 }

@@ -18,7 +18,7 @@ This repository contains the source code for my personal developer portfolio web
 ## Projects Highlighted
 - PawMatch.fit, Pet adoption matching platform
 - OpenTrackr, Productivity app with tasks and calendar
-- ThinkLoop, Idea organisation web app
+- ThinkLoop, Human-in-the-loop AI email assistant
 - Mino, AI focus coach web app
 - Paw Health, Pet health tracking app
 - Datacom IT Internship, Onboarding, MFA, and access support

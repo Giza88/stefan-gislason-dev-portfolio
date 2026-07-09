@@ -103,9 +103,9 @@ export const projects: Project[] = [
   {
     title: "ThinkLoop",
     description:
-      "Deployed web app built with React and TypeScript for capturing ideas and keeping work organised in a clean, focused interface.",
-    outcome: "Shipped idea-capture app with a clean, focused UX.",
-    tech: ["TypeScript", "React", "Vite", "Vercel"],
+      "Human-in-the-loop AI for email. Connect your inbox, let it read incoming messages, ask follow-up questions to clarify your intent, then draft a reply for you to review.",
+    outcome: "Shipped AI email assistant with question-led drafting and human approval.",
+    tech: ["TypeScript", "React", "AI", "Vite", "Vercel"],
     linkLabel: "View Live Demo",
     linkHref: "https://think-loop-brown.vercel.app",
     githubHref: "https://github.com/Giza88/ThinkLoop",

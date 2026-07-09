@@ -3,6 +3,7 @@ import {
   getDatacomSummary,
   getExperienceSummary,
   getProjectsSummary,
+  getFeaturedProjectNames,
   getSkillsSummary,
   quickFacts,
   sectionMap,
@@ -261,7 +262,7 @@ function respond(intent: string, message: string): ChatResponse {
 
       return {
         intent,
-        message: `${getProjectsSummary()} Featured projects include PawMatch.fit, OpenTrackr, and ThinkLoop.`,
+        message: `${getProjectsSummary()} Featured projects include ${getFeaturedProjectNames()}.`,
         actions: [scrollAction("#projects", "Go to Projects")],
       };
     }
