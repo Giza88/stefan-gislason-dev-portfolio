@@ -140,9 +140,9 @@ export const projects: Project[] = [
   {
     title: "Datacom IT Internship",
     description:
-      "Supported onboarding workflows, troubleshooting, access requests, and MFA setup for Datacom staff during my internship with ANZ Application Services.",
-    outcome: "Hands-on IT support across onboarding, access, and application queries.",
-    tech: ["IT Support", "MFA", "Onboarding", "Access Management"],
+      "Built an AI-powered internal newsletter platform that aggregated industry RSS feeds, analysed trends, and generated tailored updates for Datacom staff. Contributed to ANZ Application Services by improving visibility of relevant tech news and showcasing practical AI tooling during the internship.",
+    outcome: "Delivered an AI newsletter platform that surfaced relevant tech trends for Datacom staff.",
+    tech: ["AI Development", "Web App", "RSS Aggregation", "Automation"],
     linkLabel: "See highlight",
     linkHref: "#datacom-highlight",
     githubHref: "https://github.com/Giza88/Datacom-Ai-agent-training-",

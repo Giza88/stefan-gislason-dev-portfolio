@@ -21,7 +21,7 @@ This repository contains the source code for my personal developer portfolio web
 - ThinkLoop, Human-in-the-loop AI email assistant
 - Mino, AI focus coach web app
 - Paw Health, Pet health tracking app
-- Datacom IT Internship, Onboarding, MFA, and access support
+- Datacom IT Internship, AI-powered internal newsletter platform
 - Microsoft Ollama Agent, Free Hack AI, HTB AI Helper, and more on [GitHub](https://github.com/Giza88?tab=repositories)
 
 ## About Me
