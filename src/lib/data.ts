@@ -114,11 +114,11 @@ export const projects: Project[] = [
     accent: "stone",
   },
   {
-    title: "Mino",
+    title: "Mino Coach",
     description:
-      "AI focus coach for capturing tasks, planning your day, and triaging email into actionable work. Dark, calm UI with Today, Agents, Connect, and History.",
-    outcome: "Deployed live focus-coach app with AI planning and quick capture.",
-    tech: ["React", "TypeScript", "Python", "FastAPI", "Vercel"],
+      "AI focus coach for finishing one thing at a time. Pick a coach, get today's focus, run a 25-minute pomodoro session, and track progress — with AI daily planning and email-to-task capture.",
+    outcome: "Deployed focus coach with pomodoro sessions, AI planning, and email triage.",
+    tech: ["React", "TypeScript", "AI", "Python", "FastAPI", "Vercel"],
     linkLabel: "View Live Demo",
     linkHref: "https://mino-agent-motivation-coach.vercel.app/",
     image: "/projects/mino.png",
@@ -146,6 +146,7 @@ export const projects: Project[] = [
     linkLabel: "See highlight",
     linkHref: "#datacom-highlight",
     githubHref: "https://github.com/Giza88/Datacom-Ai-agent-training-",
+    image: "/projects/datacom-newsletter.png",
     featured: true,
     accent: "slate",
   },
